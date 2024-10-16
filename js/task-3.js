@@ -1,7 +1,7 @@
 function getElementWidth(content, padding, border) {
-    const contentWidth = parseFloat(content);
-    const paddingWidth = parseFloat(padding) * 2; // Падінг застосовується зліва і справа
-    const borderWidth = parseFloat(border) * 2;   // Бордер застосовується зліва і справа
+    const contentWidth = parseFloat(content.replace("px", "")); // Видаляємо "px"
+    const paddingWidth = parseFloat(padding.replace("px", "")) * 2; // Падінг застосовується зліва і справа
+    const borderWidth = parseFloat(border.replace("px", "")) * 2;   // Бордер застосовується зліва і справа
     const totalWidth = contentWidth + paddingWidth + borderWidth;
     return totalWidth;
 }
